@@ -6,7 +6,9 @@ pipeline {
     stages{
     stage('sonareqube scan'){
             steps{
+                withSonarQubeEvn('sonarserver'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zeapoemusic_week16'
+            }
             }
             }
         stage('maven commands'){
