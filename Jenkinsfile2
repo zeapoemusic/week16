@@ -8,7 +8,7 @@ pipeline {
                 sh 'mvn sonar:sonar'
             }
     stages{
-        stage('maven commands'){
+        stage('new maven commands'){
             steps{
                 sh 'mvn clean compile install package'
             }
