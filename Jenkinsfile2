@@ -4,9 +4,9 @@ pipeline {
         maven 'M2_HOME'
     }
     stages{
-            stage('build && SonarQube analysis') {
-            steps {
-                withSonarQubeEnv('sonarserver') {
+           // stage('build && SonarQube analysis') {
+           // steps {
+           //     withSonarQubeEnv('sonarserver') {
                     // Optionally use a Maven environment you've configured already
                    // withMaven(maven:'Maven 3.5') {
                       //  sh 'mvn clean package sonar:sonar'
@@ -18,4 +18,5 @@ pipeline {
             }
         }
         }
+}
 }
