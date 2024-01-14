@@ -1,7 +1,7 @@
 pipeline{
     agent any
     }
-    stages{docker { image 'node:20.10.0-alpine3.19' }}
+    stages{ docker { image 'node:20.10.0-alpine3.19' }}
         stage('check current directory'){
             steps{
                 sh 'pwd'
@@ -11,10 +11,11 @@ pipeline{
                 sh 'npm --version'
             }
         }
+        {
         stage('python script'){
             agent {docker { image 'python:3.10-slim'}}
             steps{
                sh 'python3 --version'
             }
         }
-    
+    }
