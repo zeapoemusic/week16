@@ -12,9 +12,6 @@ pipeline {
                       //  sh 'mvn clean package sonar:sonar'
                     }
                 }
-            }
-        }
-        stages{
         stage('maven commands'){
             steps{
                 sh 'mvn clean compile install package'
